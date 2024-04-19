@@ -1,0 +1,221 @@
+*{box-sizing: border-box;}
+
+.container {
+    margin: 0 auto;
+    width:90%;
+    height: 100vh;  
+}
+
+ .header{
+    display: grid;
+    grid-template-areas: "a b";
+     grid-template-columns: 60% 40%;}
+
+.maths {
+    grid-area: a/a;
+    font-size: 25px;
+
+}
+
+.maths a{
+    text-decoration: none;
+}
+
+.search {
+    grid-area: b/b;  
+    background-color: greenyellow;
+}
+
+.box{
+    height: 100px;
+}
+
+.button {
+    border: 2px solid black;
+
+    margin-top: 30px;
+}
+label{margin-left: 10px;}
+.text{
+    font-size:16px;
+}
+#text{
+    background-image: url(favicon/search.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;    
+}
+/*Navigation Styling*/
+ul.menu{
+    padding: 0;
+    list-style-type: none;
+    overflow: hidden;
+    background-color: yellow;
+    display: grid;
+    grid-template-areas:"a b c d e";
+    grid-template-columns: 20%;
+    margin-top: 10px;
+}
+ul.menu li{ 
+    border-right: 2px solid blue;
+}
+
+ul.menu li:nth-child(1){ grid-area: a/a;}
+
+ul.menu li:nth-child(2){grid-area: b/b;}
+
+ul.menu li:nth-child(3){grid-area: c/c;}
+
+ul.menu li:nth-child(4){grid-area: d/d;}
+
+ul.menu li:nth-child(5){grid-area: e/e;}
+
+
+ul.menu li a{
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 25px;
+    display: inline-block;
+    transition: color 1s ease,font-weight 1s ease;
+        
+}
+.active,a:hover{
+    color: red;
+    font-weight: bold;
+    
+}
+
+/*CONTENT*/
+.contentmain{
+    background-color: greenyellow;
+    margin: 16px 0;
+    padding: 30px;
+
+    
+}
+.content h1{
+    font-size: 40px;
+}
+.content p{
+    font-size: 20px;
+    text-align: justify;
+}
+
+/*A Table Of Go to and Why Us*/
+
+.table{
+    display: grid;
+    grid-template-areas: "a b";
+    grid-template-columns: 50% 50%;
+}
+
+.first {
+    border: 2px solid green;
+    border-radius: 10px;
+    padding: 10px;
+    grid-area: a/a;
+    margin-right: 1%;
+    
+}
+
+.second {
+    
+    border: 2px solid green;
+    border-radius: 10px;
+    grid-area: b/b;
+    margin-left: 1%;
+    
+    padding: 10px;
+    
+    
+}
+
+.half {
+    height: 400px;
+
+}
+
+.first .one a{
+    text-decoration: none;
+    text-align: center;
+/*    padding-top:80px;*/
+    font-size: 20px;
+    margin-top: 20px;
+/*    display:inline-block;*/
+}
+.two a{
+    text-decoration: none;
+    font-size: 20px;
+
+}
+ul .list{
+/*    height: 300px;*/
+}
+.one li{
+    padding-top: 1px;
+    margin-left: 10px;
+    padding-left: 20px;
+    list-style-image: url(favicon/arrowicon.png)
+    
+}
+.two li{
+    padding-top: 10px;
+     margin-left: 10px;
+    list-style-image: url(favicon/tickB.png);
+    
+}
+/*FOOTER STYLING*/
+footer{
+    background-color: yellow;
+    height: 100px;
+    padding: 20px;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    
+    
+}
+/*CREATING RESPONSIVE GRID WEBSITE*/
+
+/*RESPONSIVE HEADER*/
+@media screen and (max-width:700px){
+ .header{
+    grid-template-areas: "a "
+                         "b";
+     grid-template-columns: 100%;
+    grid-gap: 20px;}
+}
+
+
+/*    RESPONSIVE LIST*/
+    @media screen and (max-width:700px){
+        ul.menu{
+            grid-template-areas: "a "
+                                 "b"
+                                 "c"
+                                 "d" 
+                                 "e";
+                
+            
+     grid-template-columns: 100%;
+     justify-items: center;}
+    ul.menu li,.active{border-right: none;}
+      
+}
+
+/*     RESPONSIVE COLUMNS*/
+@media screen and (max-width:700px){
+    .table{
+    grid-template-areas: "a "
+                          "b " ;
+        
+                          
+    grid-template-columns: 100%;
+        grid-gap: 10px;
+}
