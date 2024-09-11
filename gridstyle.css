@@ -219,3 +219,7 @@ footer{
     grid-template-columns: 100%;
         grid-gap: 10px;
 }
+    .second {
+    margin-bottom: 10px;
+    height:auto;   
+}
